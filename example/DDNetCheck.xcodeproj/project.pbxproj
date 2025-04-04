@@ -6,7 +6,14 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		9C2CFC0F4C6AAADD83513544 /* Pods_DDNetCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3486E1F5B78C6EFEB8DD212E /* Pods_DDNetCheck.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		3486E1F5B78C6EFEB8DD212E /* Pods_DDNetCheck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DDNetCheck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		710EE6D34FE631ADA045D1E1 /* Pods-DDNetCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDNetCheck.debug.xcconfig"; path = "Target Support Files/Pods-DDNetCheck/Pods-DDNetCheck.debug.xcconfig"; sourceTree = "<group>"; };
+		C579310AEAB542E541B3122F /* Pods-DDNetCheck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDNetCheck.release.xcconfig"; path = "Target Support Files/Pods-DDNetCheck/Pods-DDNetCheck.release.xcconfig"; sourceTree = "<group>"; };
 		E4F963EE2D9E3276002B0378 /* DDNetCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDNetCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -36,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C2CFC0F4C6AAADD83513544 /* Pods_DDNetCheck.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84189644B8331531E3E9F5FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				710EE6D34FE631ADA045D1E1 /* Pods-DDNetCheck.debug.xcconfig */,
+				C579310AEAB542E541B3122F /* Pods-DDNetCheck.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CAEB757B580818BF55CBEB07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3486E1F5B78C6EFEB8DD212E /* Pods_DDNetCheck.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E4F963E52D9E3276002B0378 = {
 			isa = PBXGroup;
 			children = (
 				E4F963F02D9E3276002B0378 /* DDNetCheck */,
 				E4F963EF2D9E3276002B0378 /* Products */,
+				84189644B8331531E3E9F5FD /* Pods */,
+				CAEB757B580818BF55CBEB07 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,9 +92,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4F964012D9E327B002B0378 /* Build configuration list for PBXNativeTarget "DDNetCheck" */;
 			buildPhases = (
+				2837EF33F15BD1B8F2EAB4FC /* [CP] Check Pods Manifest.lock */,
 				E4F963EA2D9E3276002B0378 /* Sources */,
 				E4F963EB2D9E3276002B0378 /* Frameworks */,
 				E4F963EC2D9E3276002B0378 /* Resources */,
+				3B2B834552A850AFD9B464DC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -77,8 +106,6 @@
 				E4F963F02D9E3276002B0378 /* DDNetCheck */,
 			);
 			name = DDNetCheck;
-			packageProductDependencies = (
-			);
 			productName = DDNetCheck;
 			productReference = E4F963EE2D9E3276002B0378 /* DDNetCheck.app */;
 			productType = "com.apple.product-type.application";
@@ -127,6 +154,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2837EF33F15BD1B8F2EAB4FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DDNetCheck-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B2B834552A850AFD9B464DC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DDNetCheck/Pods-DDNetCheck-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DDNetCheck/Pods-DDNetCheck-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DDNetCheck/Pods-DDNetCheck-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E4F963EA2D9E3276002B0378 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,6 +209,7 @@
 /* Begin XCBuildConfiguration section */
 		E4F964022D9E327B002B0378 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 710EE6D34FE631ADA045D1E1 /* Pods-DDNetCheck.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -167,6 +237,7 @@
 		};
 		E4F964032D9E327B002B0378 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C579310AEAB542E541B3122F /* Pods-DDNetCheck.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

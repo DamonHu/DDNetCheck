@@ -1,0 +1,6 @@
+framework module DDPingTools {
+  umbrella header "DDPingTools-umbrella.h"
+
+  export *
+  module * { export * }
+}

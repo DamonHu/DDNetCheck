@@ -1,0 +1,6 @@
+framework module Pods_DDNetCheck {
+  umbrella header "Pods-DDNetCheck-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,646 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02F6561AD9F796134DDC9794D482CB3A /* DDPingTools-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C6BA73E5DEAD68AFF692FE68BA5820F /* DDPingTools-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		04AC9D6484EBE6918EC8E2B32D214BAE /* DDPingTools-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3FC88E479708F8E9B852AF7ECEEE29 /* DDPingTools-dummy.m */; };
+		0F59E242D831726EAABF5589ED6E2FC8 /* DDPingNetworkActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6ABFB07EC36A4A12978C40F171EB3 /* DDPingNetworkActivityIndicator.swift */; };
+		33A4099AECE094F67E43FEB9954BBE3E /* DDPingTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0F19C8244491A6D8FAF1F758D929FF /* DDPingTools.swift */; };
+		49794FDB663E796ADFCA055C89CA723E /* Pods-DDNetCheck-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A2D4D8E05B89476F7314B5848F3E965D /* Pods-DDNetCheck-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5900D8D6F8C0BC8F7F590A4EDAD4092F /* Pods-DDNetCheck-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0772C5648C0F197746C6476B7EFC2710 /* Pods-DDNetCheck-dummy.m */; };
+		5A954E849E58ED80820D0D31083126AD /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C835FAA76AE439472FEE61B846E5523 /* SimplePing.m */; };
+		9236AE2C775B0FD2AEB2B035697947C5 /* DDPingTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E6AEB0B7023A02580F9241C0235DC3D /* DDPingTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A23EDAAB4535386C2118F52E932BF244 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		BCFA1E9D010062C4A0B6CA5B9FE45168 /* SimplePing.h in Headers */ = {isa = PBXBuildFile; fileRef = 722D3B75E25CFD3A9716CBE95142DB8F /* SimplePing.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EDF64F19E42947CA39DD6ED7057C1355 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7CC6FB7946802472D031A6C4904DA73B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 64DE6FB8B8F7C02735674E52FC29E141;
+			remoteInfo = DDPingTools;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0772C5648C0F197746C6476B7EFC2710 /* Pods-DDNetCheck-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DDNetCheck-dummy.m"; sourceTree = "<group>"; };
+		167CB35BD52938A14E377D998F22457B /* Pods-DDNetCheck */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-DDNetCheck"; path = Pods_DDNetCheck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F0F19C8244491A6D8FAF1F758D929FF /* DDPingTools.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DDPingTools.swift; path = pod/DDPingTools.swift; sourceTree = "<group>"; };
+		2E6AEB0B7023A02580F9241C0235DC3D /* DDPingTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDPingTools.h; path = pod/DDPingTools.h; sourceTree = "<group>"; };
+		384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3C2104DC0603C9368BC8B9CEADFBA044 /* Pods-DDNetCheck-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DDNetCheck-Info.plist"; sourceTree = "<group>"; };
+		4A792292A27BFFA477B8F9A88E04C9B6 /* Pods-DDNetCheck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DDNetCheck.release.xcconfig"; sourceTree = "<group>"; };
+		51FCB85C4ECB6D2A0983EF1F5F42E2B4 /* Pods-DDNetCheck-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DDNetCheck-acknowledgements.markdown"; sourceTree = "<group>"; };
+		57124F044BE3F0B9637575803D0474BF /* Pods-DDNetCheck.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DDNetCheck.modulemap"; sourceTree = "<group>"; };
+		60308833F30CAD3753F78553207AB458 /* DDPingTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DDPingTools.debug.xcconfig; sourceTree = "<group>"; };
+		722D3B75E25CFD3A9716CBE95142DB8F /* SimplePing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SimplePing.h; path = pod/SimplePing.h; sourceTree = "<group>"; };
+		87562ABBDC8C2F16ED0EE9BE0E896465 /* DDPingTools.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DDPingTools.modulemap; sourceTree = "<group>"; };
+		8C6BA73E5DEAD68AFF692FE68BA5820F /* DDPingTools-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DDPingTools-umbrella.h"; sourceTree = "<group>"; };
+		8C835FAA76AE439472FEE61B846E5523 /* SimplePing.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SimplePing.m; path = pod/SimplePing.m; sourceTree = "<group>"; };
+		8CE6ABFB07EC36A4A12978C40F171EB3 /* DDPingNetworkActivityIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DDPingNetworkActivityIndicator.swift; path = pod/DDPingNetworkActivityIndicator.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A2D4D8E05B89476F7314B5848F3E965D /* Pods-DDNetCheck-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DDNetCheck-umbrella.h"; sourceTree = "<group>"; };
+		A4F9A4A5179F8CCFC37A63CAF3F7768C /* DDPingTools */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DDPingTools; path = DDPingTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD3FC88E479708F8E9B852AF7ECEEE29 /* DDPingTools-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DDPingTools-dummy.m"; sourceTree = "<group>"; };
+		B36A8A70FA59262E1C2796C44F5761D1 /* DDPingTools-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DDPingTools-Info.plist"; sourceTree = "<group>"; };
+		CFEF1CFB669E4B43D551DF03938268EF /* DDPingTools-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DDPingTools-prefix.pch"; sourceTree = "<group>"; };
+		D01020BD846CE4D558AD5CC18FCD7D92 /* Pods-DDNetCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DDNetCheck.debug.xcconfig"; sourceTree = "<group>"; };
+		EF04C192CA152B76E5FBC6C43F666767 /* Pods-DDNetCheck-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DDNetCheck-frameworks.sh"; sourceTree = "<group>"; };
+		F82E22ECA10F8F964D143BCF550130B9 /* Pods-DDNetCheck-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DDNetCheck-acknowledgements.plist"; sourceTree = "<group>"; };
+		FDEA85AF9F97EC731CD370A7ECC692C1 /* DDPingTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DDPingTools.release.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7464C8E741FF6E7601A7CB745ED1ECE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A23EDAAB4535386C2118F52E932BF244 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAA782E13C3540701B476FCF498DD2EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDF64F19E42947CA39DD6ED7057C1355 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0036F130D9CFA21067E65D996B271768 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				87562ABBDC8C2F16ED0EE9BE0E896465 /* DDPingTools.modulemap */,
+				AD3FC88E479708F8E9B852AF7ECEEE29 /* DDPingTools-dummy.m */,
+				B36A8A70FA59262E1C2796C44F5761D1 /* DDPingTools-Info.plist */,
+				CFEF1CFB669E4B43D551DF03938268EF /* DDPingTools-prefix.pch */,
+				8C6BA73E5DEAD68AFF692FE68BA5820F /* DDPingTools-umbrella.h */,
+				60308833F30CAD3753F78553207AB458 /* DDPingTools.debug.xcconfig */,
+				FDEA85AF9F97EC731CD370A7ECC692C1 /* DDPingTools.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/DDPingTools";
+			sourceTree = "<group>";
+		};
+		27DA63A523C8977F6B7C43E4E8462D03 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				8CE6ABFB07EC36A4A12978C40F171EB3 /* DDPingNetworkActivityIndicator.swift */,
+				2E6AEB0B7023A02580F9241C0235DC3D /* DDPingTools.h */,
+				1F0F19C8244491A6D8FAF1F758D929FF /* DDPingTools.swift */,
+				722D3B75E25CFD3A9716CBE95142DB8F /* SimplePing.h */,
+				8C835FAA76AE439472FEE61B846E5523 /* SimplePing.m */,
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
+		27DB72CEEE1D30D719EF8503A4EE1F89 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3DB4BCDAD25B50E2EEFF561EDEBE4FEC /* Pods-DDNetCheck */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		3DB4BCDAD25B50E2EEFF561EDEBE4FEC /* Pods-DDNetCheck */ = {
+			isa = PBXGroup;
+			children = (
+				57124F044BE3F0B9637575803D0474BF /* Pods-DDNetCheck.modulemap */,
+				51FCB85C4ECB6D2A0983EF1F5F42E2B4 /* Pods-DDNetCheck-acknowledgements.markdown */,
+				F82E22ECA10F8F964D143BCF550130B9 /* Pods-DDNetCheck-acknowledgements.plist */,
+				0772C5648C0F197746C6476B7EFC2710 /* Pods-DDNetCheck-dummy.m */,
+				EF04C192CA152B76E5FBC6C43F666767 /* Pods-DDNetCheck-frameworks.sh */,
+				3C2104DC0603C9368BC8B9CEADFBA044 /* Pods-DDNetCheck-Info.plist */,
+				A2D4D8E05B89476F7314B5848F3E965D /* Pods-DDNetCheck-umbrella.h */,
+				D01020BD846CE4D558AD5CC18FCD7D92 /* Pods-DDNetCheck.debug.xcconfig */,
+				4A792292A27BFFA477B8F9A88E04C9B6 /* Pods-DDNetCheck.release.xcconfig */,
+			);
+			name = "Pods-DDNetCheck";
+			path = "Target Support Files/Pods-DDNetCheck";
+			sourceTree = "<group>";
+		};
+		9616DB623D6B3965FBB91EE9685F60BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A4F9A4A5179F8CCFC37A63CAF3F7768C /* DDPingTools */,
+				167CB35BD52938A14E377D998F22457B /* Pods-DDNetCheck */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE21D66BE1CFEA0565FB11A1E1EB6419 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D7523787B951C41F762FCFDDC0E2284E /* DDPingTools */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				AE21D66BE1CFEA0565FB11A1E1EB6419 /* Pods */,
+				9616DB623D6B3965FBB91EE9685F60BD /* Products */,
+				27DB72CEEE1D30D719EF8503A4EE1F89 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4801F62A6B08CD9B5410329F1A18FDE /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D7523787B951C41F762FCFDDC0E2284E /* DDPingTools */ = {
+			isa = PBXGroup;
+			children = (
+				27DA63A523C8977F6B7C43E4E8462D03 /* core */,
+				0036F130D9CFA21067E65D996B271768 /* Support Files */,
+			);
+			name = DDPingTools;
+			path = DDPingTools;
+			sourceTree = "<group>";
+		};
+		E4801F62A6B08CD9B5410329F1A18FDE /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5680BFAB52BD57E071B34B9C4D9B87AD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9236AE2C775B0FD2AEB2B035697947C5 /* DDPingTools.h in Headers */,
+				02F6561AD9F796134DDC9794D482CB3A /* DDPingTools-umbrella.h in Headers */,
+				BCFA1E9D010062C4A0B6CA5B9FE45168 /* SimplePing.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		881FC9E36685763F0D1192C69A29D95F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49794FDB663E796ADFCA055C89CA723E /* Pods-DDNetCheck-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1B96C236AF92F1B359A8479CD4EB58CC /* Pods-DDNetCheck */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 735AA5BCE9B5F189C42F34EEA25662A6 /* Build configuration list for PBXNativeTarget "Pods-DDNetCheck" */;
+			buildPhases = (
+				881FC9E36685763F0D1192C69A29D95F /* Headers */,
+				92A8F00B562281F64108961BDFBB5008 /* Sources */,
+				7464C8E741FF6E7601A7CB745ED1ECE1 /* Frameworks */,
+				C8C0ED7355FD503AE526F3D75ABCFF82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				326A06D74B505F86FDA6B29F30D5BE0A /* PBXTargetDependency */,
+			);
+			name = "Pods-DDNetCheck";
+			productName = Pods_DDNetCheck;
+			productReference = 167CB35BD52938A14E377D998F22457B /* Pods-DDNetCheck */;
+			productType = "com.apple.product-type.framework";
+		};
+		64DE6FB8B8F7C02735674E52FC29E141 /* DDPingTools */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9804145B155CE1FB021E8FFEB353538 /* Build configuration list for PBXNativeTarget "DDPingTools" */;
+			buildPhases = (
+				5680BFAB52BD57E071B34B9C4D9B87AD /* Headers */,
+				B49D944DDE9F34ED797A22611278026A /* Sources */,
+				DAA782E13C3540701B476FCF498DD2EF /* Frameworks */,
+				C8CD6DAA13259706462960375E62ECFD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DDPingTools;
+			productName = DDPingTools;
+			productReference = A4F9A4A5179F8CCFC37A63CAF3F7768C /* DDPingTools */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 16.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			minimizedProjectReferenceProxies = 0;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 9616DB623D6B3965FBB91EE9685F60BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				64DE6FB8B8F7C02735674E52FC29E141 /* DDPingTools */,
+				1B96C236AF92F1B359A8479CD4EB58CC /* Pods-DDNetCheck */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C8C0ED7355FD503AE526F3D75ABCFF82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8CD6DAA13259706462960375E62ECFD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		92A8F00B562281F64108961BDFBB5008 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5900D8D6F8C0BC8F7F590A4EDAD4092F /* Pods-DDNetCheck-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B49D944DDE9F34ED797A22611278026A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F59E242D831726EAABF5589ED6E2FC8 /* DDPingNetworkActivityIndicator.swift in Sources */,
+				33A4099AECE094F67E43FEB9954BBE3E /* DDPingTools.swift in Sources */,
+				04AC9D6484EBE6918EC8E2B32D214BAE /* DDPingTools-dummy.m in Sources */,
+				5A954E849E58ED80820D0D31083126AD /* SimplePing.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		326A06D74B505F86FDA6B29F30D5BE0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DDPingTools;
+			target = 64DE6FB8B8F7C02735674E52FC29E141 /* DDPingTools */;
+			targetProxy = 7CC6FB7946802472D031A6C4904DA73B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		032C2B5DB2AC7D87BC03DF299706CE84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60308833F30CAD3753F78553207AB458 /* DDPingTools.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/DDPingTools/DDPingTools-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/DDPingTools/DDPingTools-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/DDPingTools/DDPingTools.modulemap";
+				PRODUCT_MODULE_NAME = DDPingTools;
+				PRODUCT_NAME = DDPingTools;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2F2BA0B8B03036E32809797227AF257C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D01020BD846CE4D558AD5CC18FCD7D92 /* Pods-DDNetCheck.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-DDNetCheck/Pods-DDNetCheck-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DDNetCheck/Pods-DDNetCheck.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AD715F53C7AB4BB240393D7347375029 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDEA85AF9F97EC731CD370A7ECC692C1 /* DDPingTools.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/DDPingTools/DDPingTools-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/DDPingTools/DDPingTools-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/DDPingTools/DDPingTools.modulemap";
+				PRODUCT_MODULE_NAME = DDPingTools;
+				PRODUCT_NAME = DDPingTools;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B86D71A5E7AB53EB2C08DEA39FBD2050 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		BC62759BF8C019F830C9173E048F8AB8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A792292A27BFFA477B8F9A88E04C9B6 /* Pods-DDNetCheck.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-DDNetCheck/Pods-DDNetCheck-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DDNetCheck/Pods-DDNetCheck.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BD5E84F7B72D348654A4D58B6BA51118 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD5E84F7B72D348654A4D58B6BA51118 /* Debug */,
+				B86D71A5E7AB53EB2C08DEA39FBD2050 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		735AA5BCE9B5F189C42F34EEA25662A6 /* Build configuration list for PBXNativeTarget "Pods-DDNetCheck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F2BA0B8B03036E32809797227AF257C /* Debug */,
+				BC62759BF8C019F830C9173E048F8AB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9804145B155CE1FB021E8FFEB353538 /* Build configuration list for PBXNativeTarget "DDPingTools" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				032C2B5DB2AC7D87BC03DF299706CE84 /* Debug */,
+				AD715F53C7AB4BB240393D7347375029 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

@@ -1,0 +1,18 @@
+PODS:
+  - DDPingTools (3.0.1):
+    - DDPingTools/core (= 3.0.1)
+  - DDPingTools/core (3.0.1)
+
+DEPENDENCIES:
+  - DDPingTools
+
+SPEC REPOS:
+  trunk:
+    - DDPingTools
+
+SPEC CHECKSUMS:
+  DDPingTools: b08b9d3c0801f59754e43c56a14306ec0c0a33b4
+
+PODFILE CHECKSUM: b357d3f2038ed3e5a807f52f4e2d35cd1b930c23
+
+COCOAPODS: 1.16.2
