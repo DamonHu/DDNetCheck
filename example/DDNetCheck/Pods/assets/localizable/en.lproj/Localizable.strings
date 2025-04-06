@@ -17,3 +17,17 @@
 "Device Apple server access speed" = "Device Apple server access speed";
 "Device is using a VPN" = "Device is using a VPN";
 "Device is using a proxy" = "Device is using a proxy";
+"Server Connection Status" = "Server Connection Status";
+"Response Time" = "Response Time";
+"Failed" = "Failed";
+"App Server Connection Test" = "App Server Connection Test";
+"Common Website Network Test" = "Common Website Network Test";
+"Device Network Status" = "Device Network Status";
+"Success" = "Success";
+"Device Not Connected to Network" = "Device Not Connected to Network";
+"Request Timed Out" = "Request Timed Out";
+"DNS Resolution Error" = "DNS Resolution Error";
+"SSL Certificate Error" = "SSL Certificate Error";
+"Abnormal Server Response" = "Abnormal Server Response";
+"Unknown Server Error" = "Unknown Server Error";
+

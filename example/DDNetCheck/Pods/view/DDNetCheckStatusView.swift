@@ -29,16 +29,16 @@ class DDNetCheckStatusView: UIView {
             case .success:
                 self.mLoadingIndicator.isHidden = true
                 self.mStatusImageView.isHidden = false
-                self.mStatusImageView.image = UIImage(named: "icon-success")
+                self.mStatusImageView.image = UIImageHDBoundle(named: "icon-success")
             case .failed:
                 self.mLoadingIndicator.isHidden = true
                 self.mStatusImageView.isHidden = false
-                self.mStatusImageView.image = UIImage(named: "icon-failed")
+                self.mStatusImageView.image = UIImageHDBoundle(named: "icon-failed")
             case .text(let text, let isSuccess):
                 self.mLoadingIndicator.isHidden = true
                 self.mStatusImageView.isHidden = true
                 self.mLabelView.isHidden = false
-                self.mLabelView.backgroundColor = isSuccess ?
+                self.mLabelView.backgroundColor = isSuccess ? UIColor(red: 104.0 / 255.0, green: 183.0 / 255.0, blue: 97.0 / 255.0, alpha: 1) : UIColor(red: 252.0 / 255.0, green: 71.0 / 255.0, blue: 75.0 / 255.0, alpha: 1)
                 self.mTitleLabel.text = text
             }
         }
@@ -103,7 +103,7 @@ class DDNetCheckStatusView: UIView {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isHidden = true
-        view.backgroundColor = UIColor(red: 63.0 / 255.0, green: 125.0 / 255.0, blue: 88.0 / 255.0, alpha: 1)
+        view.backgroundColor = UIColor(red: 104.0 / 255.0, green: 183.0 / 255.0, blue: 97.0 / 255.0, alpha: 1)
         view.layer.masksToBounds = true
         view.layer.cornerRadius = 6
         return view

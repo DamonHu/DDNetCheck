@@ -98,8 +98,8 @@ private extension DDNetCheckVC {
         self.list.removeAll()
         //网站状态
         var webList = [DDNetCheckTableViewWebCellModel]()
-        let model1 = DDNetCheckTableViewWebCellModel(title: "服务器状态".ZXLocaleString, image: UIImageHDBoundle(named: "isConnected"))
-        let model2 = DDNetCheckTableViewWebCellModel(title: "访问速度".ZXLocaleString, image: UIImageHDBoundle(named: "ping"))
+        let model1 = DDNetCheckTableViewWebCellModel(title: "Server Connection Status".ZXLocaleString, image: UIImageHDBoundle(named: "isConnected"))
+        let model2 = DDNetCheckTableViewWebCellModel(title: "Response Time".ZXLocaleString, image: UIImageHDBoundle(named: "ping"))
         webList.append(model1)
         webList.append(model2)
         //参考网站状态
@@ -125,13 +125,12 @@ private extension DDNetCheckVC {
         self.checkTool.checkServer(url: URL(string: self.url)) { [weak self] status in
             guard let self = self else { return }
             let model = self.list[0][0]
-//            switch status {
-//            case .success:
-//                model.status = .success
-//            default:
-//                model.status = .text(status.reason())
-//            }
-            model.status = .text("SSL证书错误")
+            switch status {
+            case .success:
+                model.status = .success
+            default:
+                model.status = .text(status.reason(), false)
+            }
             DispatchQueue.main.async {
                 self.mTableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
             }
@@ -140,11 +139,14 @@ private extension DDNetCheckVC {
         self.checkTool.ping(url: self.url) { [weak self] response, error in
             guard let self = self else { return }
             let model = self.list[0][1]
-            var text = "error"
+            var text = "Failed".ZXLocaleString
             if let response = response, response.responseTime.second > 0 {
                 text = "\(Int(response.responseTime.second * 1000))ms"
+                model.status = .text(text, true)
+            } else {
+                model.status = .text(text, false)
             }
-            model.status = .text(text)
+            
             DispatchQueue.main.async {
                 self.mTableView.reloadRows(at: [IndexPath(row: 1, section: 0)], with: .none)
             }
@@ -159,12 +161,13 @@ private extension DDNetCheckVC {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(index)) {
                 self.checkTool.ping(url: "https://\(model.getTitle())") { [weak self] response, error in
                     guard let self = self else { return }
-                    var text = "error"
+                    var text = "Failed".ZXLocaleString
                     if let response = response, response.responseTime.second > 0 {
                         text = "\(Int(response.responseTime.second * 1000))ms"
+                        model.status = .text(text, true)
+                    } else {
+                        model.status = .text(text, false)
                     }
-                    model.status = .text(text)
-                    
                     DispatchQueue.main.async {
                         self.mTableView.reloadRows(at: [IndexPath(row: index, section: 1)], with: .none)
                     }
@@ -213,11 +216,11 @@ extension DDNetCheckVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-            return "APP服务器连接"
+            return "App Server Connection Test".ZXLocaleString
         } else if section == 1 {
-            return "网络测试"
+            return "Common Website Network Test".ZXLocaleString
         } else {
-            return "用户设备状态"
+            return "Device Network Status".ZXLocaleString
         }
     }
     

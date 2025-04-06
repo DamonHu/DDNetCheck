@@ -17,3 +17,16 @@
 "Device Apple server access speed" = "设备访问苹果服务器速度";
 "Device is using a VPN" = "设备正在使用VPN";
 "Device is using a proxy" = "设备正在使用代理";
+"Server Connection Status" = "服务器连接状态";
+"Response Time" = "访问速度";
+"Failed" = "失败";
+"App Server Connection Test" = "APP服务器连接测试";
+"Common Website Network Test" = "常用网站网络测试";
+"Device Network Status" = "用户设备网络状态";
+"Success" = "成功";
+"Device Not Connected to Network" = "设备未连接网络";
+"Request Timed Out" = "访问超时";
+"DNS Resolution Error" = "DNS解析错误";
+"SSL Certificate Error" = "SSL证书错误";
+"Abnormal Server Response" = "服务器响应异常";
+"Unknown Server Error" = "服务器未知错误";

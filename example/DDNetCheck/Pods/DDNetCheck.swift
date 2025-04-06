@@ -36,19 +36,19 @@ public extension NetworkStatus {
     func reason() -> String {
         switch self {
         case .success:
-            return "成功".ZXLocaleString
+            return "Success".ZXLocaleString
         case .noConnection:
-            return "未连接".ZXLocaleString
+            return "Device Not Connected to Network".ZXLocaleString
         case .timeout:
-            return "超时".ZXLocaleString
+            return "Request Timed Out".ZXLocaleString
         case .dnsError:
-            return "DNS错误".ZXLocaleString
+            return "DNS Resolution Error".ZXLocaleString
         case .sslError:
-            return "SSL证书错误".ZXLocaleString
+            return "SSL Certificate Error".ZXLocaleString
         case .serverError(let int):
-            return "服务器错误".ZXLocaleString + ",code: \(int)"
+            return "Abnormal Server Response".ZXLocaleString + ",code: \(int)"
         case .unknownError:
-            return "未知错误".ZXLocaleString
+            return "Unknown Server Error".ZXLocaleString
         }
     }
 }
@@ -67,23 +67,18 @@ extension DDNetCheck {
         monitor = NWPathMonitor()
         monitor?.pathUpdateHandler = { path in
             if path.status == .satisfied {
-                print("✅ 设备连接了网络")
                 if path.supportsDNS {
-                    print("✅ DNS 解析正常")
                     completion(.dns, true)
                 } else {
-                    print("❌ DNS 解析失败")
                     completion(.dns, false)
                 }
                 //网络类型
                 if path.usesInterfaceType(.wifi) {
-                    print("⚠️ 当前使用wifi")
                     completion(.wifi, true)
                 } else {
                     completion(.wifi, false)
                 }
                 if path.usesInterfaceType(.cellular) {
-                    print("⚠️ 当前使用蜂窝数据")
                     completion(.cellular, true)
                 } else {
                     completion(.cellular, false)
@@ -112,7 +107,6 @@ extension DDNetCheck {
                     completion(.isConstrained, false)
                 }
             } else {
-                print("❌ 设备未连接网络")
                 for type in DDNetCheckType.allCases {
                     completion(type, false)
                 }
@@ -164,7 +158,7 @@ extension DDNetCheck {
     public func ping(url: String, complete: @escaping PingComplete) {
         let pingTool = DDPingTools(url: URL(string: url))
         pingTool.showNetworkActivityIndicator = .none
-//        pingTool.debugLog = false
+        pingTool.debugLog = false
         pingTool.start(pingType: .any, interval: .millisecond(5000), complete: { response, error in
             complete(response, error)
         })
