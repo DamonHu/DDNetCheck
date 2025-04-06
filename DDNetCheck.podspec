@@ -10,7 +10,11 @@ s.source = { :git => "https://github.com/DamonHu/DDNetCheck", :tag => s.version}
 s.requires_arc = true
 s.ios.deployment_target = '12.0'
 s.subspec 'core' do |cs|
-    cs.source_files = "pod/*.{swift}"
+    cs.resource_bundles = {
+      'DDNetCheck' => ['example/DDNetCheck/Pods/assets/**/*']
+    }
+    cs.source_files = "example/DDNetCheck/Pods/*.swift", "example/DDNetCheck/Pods/model/*.swift", "example/DDNetCheck/Pods/view/*.swift"
+    cs.dependency 'DDPingTools'
 end
 
 s.default_subspecs = "core"
