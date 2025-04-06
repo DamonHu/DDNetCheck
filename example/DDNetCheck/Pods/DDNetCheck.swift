@@ -101,8 +101,12 @@ extension DDNetCheck {
                 }
                 
                 //是否受限
-                if path.isConstrained {
-                    completion(.isConstrained, true)
+                if #available(iOS 13.0, *) {
+                    if path.isConstrained {
+                        completion(.isConstrained, true)
+                    } else {
+                        completion(.isConstrained, false)
+                    }
                 } else {
                     completion(.isConstrained, false)
                 }

@@ -85,7 +85,7 @@ class DDNetCheckStatusView: UIView {
 
     //MARK: UI
     lazy var mLoadingIndicator: UIActivityIndicatorView = {
-        let loadingIndicator = UIActivityIndicatorView(style: .medium)
+        let loadingIndicator = UIActivityIndicatorView()
         loadingIndicator.translatesAutoresizingMaskIntoConstraints = false
         loadingIndicator.startAnimating()
         loadingIndicator.isHidden = true
