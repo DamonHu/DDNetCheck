@@ -23,14 +23,21 @@ extension String{
     }
 }
 
+//参考网站测速
+enum TestWeb: CaseIterable {
+    case apple
+    case amazon
+    case baidu
+    case aliyun
+}
+
 class DDNetCheckVC: UIViewController {
     private var url: String
-    private var checkTool: DDNetCheck
-    private let list = DDNetCheckType.allCases
+    private var checkTool = DDNetCheck()
+    private var list = [[DDNetCheckTableViewCellModel]]()
     
     init(url: String) {
         self.url = url
-        self.checkTool = DDNetCheck(url: url)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -44,6 +51,11 @@ class DDNetCheckVC: UIViewController {
         self._loadData()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self._startCheck()
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.checkTool.stop()
@@ -51,7 +63,7 @@ class DDNetCheckVC: UIViewController {
     
     //MARK: UI
     private lazy var mTableView: UITableView = {
-        let tableView = UITableView(frame: CGRect.zero, style: UITableView.Style.plain)
+        let tableView = UITableView(frame: CGRect.zero, style: UITableView.Style.grouped)
         if #available(iOS 15.0, *) {
             tableView.sectionHeaderTopPadding = 0
         }
@@ -83,27 +95,99 @@ private extension DDNetCheckVC {
     }
     
     func _loadData() {
-        self.checkTool.checkNetStatus { [weak self] type, isSuccess in
+        self.list.removeAll()
+        //网站状态
+        var webList = [DDNetCheckTableViewWebCellModel]()
+        let model1 = DDNetCheckTableViewWebCellModel(title: "服务器状态".ZXLocaleString, image: UIImageHDBoundle(named: "isConnected"))
+        let model2 = DDNetCheckTableViewWebCellModel(title: "访问速度".ZXLocaleString, image: UIImageHDBoundle(named: "ping"))
+        webList.append(model1)
+        webList.append(model2)
+        //参考网站状态
+        let testList = TestWeb.allCases.map { web in
+            let model = DDNetCheckTableViewTestCellModel()
+            model.testWeb = web
+            return model
+        }
+        //手机状态
+        let platformList = DDNetCheckType.allCases.map { type in
+            let model = DDNetCheckTableViewPlatformCellModel()
+            model.checkType = type
+            return model
+        }
+        //列表
+        self.list.append(webList)
+        self.list.append(testList)
+        self.list.append(platformList)
+    }
+    
+    func _startCheck() {
+        //网站状态
+        self.checkTool.checkServer(url: URL(string: self.url)) { [weak self] status in
             guard let self = self else { return }
+            let model = self.list[0][0]
+//            switch status {
+//            case .success:
+//                model.status = .success
+//            default:
+//                model.status = .text(status.reason())
+//            }
+            model.status = .text("SSL证书错误")
             DispatchQueue.main.async {
-                guard let index = self.list.firstIndex(of: type), let cell = self.mTableView.cellForRow(at: IndexPath(row: index, section: 0)) as? DDNetCheckTableViewCell else {
-                    return
-                }
-                cell.updateUI(type: type, status: isSuccess ? .success : .failed)
+                self.mTableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
             }
         }
         
-        self.checkTool.ping { [weak self] type, response, error in
+        self.checkTool.ping(url: self.url) { [weak self] response, error in
             guard let self = self else { return }
+            let model = self.list[0][1]
+            var text = "error"
+            if let response = response, response.responseTime.second > 0 {
+                text = "\(Int(response.responseTime.second * 1000))ms"
+            }
+            model.status = .text(text)
             DispatchQueue.main.async {
-                guard let index = self.list.firstIndex(of: type), let cell = self.mTableView.cellForRow(at: IndexPath(row: index, section: 0)) as? DDNetCheckTableViewCell, let response = response else {
-                    return
+                self.mTableView.reloadRows(at: [IndexPath(row: 1, section: 0)], with: .none)
+            }
+        }
+        
+        //网站测试
+        let sectionList1: [DDNetCheckTableViewTestCellModel] = self.list[1].compactMap { model in
+            return model as? DDNetCheckTableViewTestCellModel
+        }
+        for index in 0..<sectionList1.count {
+            let model = sectionList1[index]
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(index)) {
+                self.checkTool.ping(url: "https://\(model.getTitle())") { [weak self] response, error in
+                    guard let self = self else { return }
+                    var text = "error"
+                    if let response = response, response.responseTime.second > 0 {
+                        text = "\(Int(response.responseTime.second * 1000))ms"
+                    }
+                    model.status = .text(text)
+                    
+                    DispatchQueue.main.async {
+                        self.mTableView.reloadRows(at: [IndexPath(row: index, section: 1)], with: .none)
+                    }
                 }
-                var text = "error"
-                if response.responseTime.second > 0 {
-                    text = "\(Int(response.responseTime.second * 1000))ms"
-                }
-                cell.updateUI(type: type, status: .text(text))
+            }
+            
+        }
+        
+        //手机状态
+        let sectionList2: [DDNetCheckTableViewPlatformCellModel] = self.list[2].compactMap { model in
+            return model as? DDNetCheckTableViewPlatformCellModel
+        }
+        self.checkTool.checkPlatform { [weak self] type, isSuccess in
+            guard let self = self, let index = sectionList2.firstIndex(where: { model in
+                return model.checkType == type
+            }) else { return }
+            
+            let model = sectionList2[index]
+            model.status = isSuccess ? .success : .failed
+            
+            
+            DispatchQueue.main.async {
+                self.mTableView.reloadRows(at: [IndexPath(row: index, section: 2)], with: .none)
             }
         }
     }
@@ -111,13 +195,41 @@ private extension DDNetCheckVC {
 
 extension DDNetCheckVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return list[section].count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let type = list[indexPath.row]
+        let model = list[indexPath.section][indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "DDNetCheckTableViewCell") as! DDNetCheckTableViewCell
-        cell.updateUI(type: type, status: .checking)
+        cell.selectionStyle = .none
+        cell.updateUI(image: model.getImage(), title: model.getTitle())
+        cell.updateUI(status: model.status)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "APP服务器连接"
+        } else if section == 1 {
+            return "网络测试"
+        } else {
+            return "用户设备状态"
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.1
     }
 }

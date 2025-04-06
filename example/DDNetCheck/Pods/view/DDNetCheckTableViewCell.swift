@@ -43,39 +43,13 @@ class DDNetCheckTableViewCell: UITableViewCell {
         mNetCheckStatusView.leftAnchor.constraint(equalTo: mTitleLabel.rightAnchor, constant: 10).isActive = true
     }
     
-    func updateUI(type: DDNetCheckType, status: CheckStatus) {
-        switch type {
-        case .notAvailable:
-            mIconImageView.image = UIImageHDBoundle(named: "notAvailable")
-            mTitleLabel.text = "notAvailable".ZXLocaleString
-        case .wifi:
-            mIconImageView.image = UIImageHDBoundle(named: "wifi")
-            mTitleLabel.text = "notAvailable".ZXLocaleString
-        case .dns:
-            mIconImageView.image = UIImageHDBoundle(named: "dns")
-            mTitleLabel.text = "notAvailable".ZXLocaleString
-        case .ipv4:
-            mIconImageView.image = UIImageHDBoundle(named: "ipv4")
-            mTitleLabel.text = "notAvailable".ZXLocaleString
-        case .ipv6:
-            mIconImageView.image = UIImageHDBoundle(named: "ipv6")
-            mTitleLabel.text = "notAvailable".ZXLocaleString
-        case .isConstrained:
-            mIconImageView.image = UIImageHDBoundle(named: "isConstrained")
-            mTitleLabel.text = "notAvailable".ZXLocaleString
-        case .isConnected:
-            mIconImageView.image = UIImageHDBoundle(named: "isConnected")
-            mTitleLabel.text = "notAvailable".ZXLocaleString
-        case .appleServerConnected:
-            mIconImageView.image = UIImageHDBoundle(named: "appleServerConnected")
-            mTitleLabel.text = "notAvailable".ZXLocaleString
-        case .ping:
-            mIconImageView.image = UIImageHDBoundle(named: "ping")
-            mTitleLabel.text = "notAvailable".ZXLocaleString
-        case .appleServerPing:
-            mIconImageView.image = UIImageHDBoundle(named: "appleServerPing")
-            mTitleLabel.text = "notAvailable".ZXLocaleString
-        }
+    func updateUI(image: UIImage?, title: String?) {
+        mIconImageView.image = image
+        mTitleLabel.text = title
+        self.mNetCheckStatusView.mLoadingIndicator.startAnimating()
+    }
+    
+    func updateUI(status: CheckStatus) {
         self.mNetCheckStatusView.status = status
     }
     

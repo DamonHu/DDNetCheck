@@ -9,41 +9,61 @@ import UIKit
 import Network
 import DDPingTools
 
+//设备检测
 public enum DDNetCheckType: CaseIterable {
-    case notAvailable       //未联网
     case wifi           //是否是wifi类型
+    case cellular       //是否是蜂窝网络
+    case proxy          //使用代理
+    case vpn            //使用了vpn
     case dns            //DNS状态
     case ipv4           //是否支持ipv4
     case ipv6           //是否支持ipv6
     case isConstrained  //是否在低数据模式或者省电或节省流量的受限模式
-    case isConnected    //是否可以链接
-    case appleServerConnected    //苹果服务器响应
-    case ping           //ping速度
-    case appleServerPing    //苹果服务器响应
+}
+
+//网站监测
+public enum NetworkStatus {
+    case success
+    case noConnection
+    case timeout
+    case dnsError
+    case sslError
+    case serverError(Int)
+    case unknownError
+}
+
+public extension NetworkStatus {
+    func reason() -> String {
+        switch self {
+        case .success:
+            return "成功".ZXLocaleString
+        case .noConnection:
+            return "未连接".ZXLocaleString
+        case .timeout:
+            return "超时".ZXLocaleString
+        case .dnsError:
+            return "DNS错误".ZXLocaleString
+        case .sslError:
+            return "SSL证书错误".ZXLocaleString
+        case .serverError(let int):
+            return "服务器错误".ZXLocaleString + ",code: \(int)"
+        case .unknownError:
+            return "未知错误".ZXLocaleString
+        }
+    }
 }
 
 open class DDNetCheck: NSObject {
     private var monitor: NWPathMonitor?
-    private var url: String
-    private var pingTools: DDPingTools?
-    private var applePingTools: DDPingTools?
-    
-    public init(url: String) {
-        self.url = url
-        self.pingTools = DDPingTools(url: URL(string: url))
-        self.pingTools?.showNetworkActivityIndicator = .none
-        self.pingTools?.debugLog = false
-        self.applePingTools = DDPingTools(url: URL(string: "https://www.apple.com"))
-        self.applePingTools?.showNetworkActivityIndicator = .none
-        self.applePingTools?.debugLog = false
-        super.init()
-    }
+    private var pingTools: [DDPingTools] = []
 }
 
 extension DDNetCheck {
-    public func checkNetStatus(completion:  @escaping (DDNetCheckType, Bool) -> Void) {
-        self.stop()
-        
+    public func checkPlatform(completion:  @escaping (DDNetCheckType, Bool) -> Void) {
+        //VPN监测
+        completion(.vpn, self.isVPNActive())
+        //设备信息
+        monitor?.cancel()
         monitor = NWPathMonitor()
         monitor?.pathUpdateHandler = { path in
             if path.status == .satisfied {
@@ -55,19 +75,23 @@ extension DDNetCheck {
                     print("❌ DNS 解析失败")
                     completion(.dns, false)
                 }
-
-                if path.isExpensive {
-                    print("⚠️ 当前使用蜂窝数据或热点")
-                } else {
-                    print("✅ 使用 Wi-Fi 或有线网络")
-                }
                 //网络类型
                 if path.usesInterfaceType(.wifi) {
                     print("⚠️ 当前使用wifi")
                     completion(.wifi, true)
-                } else if path.usesInterfaceType(.cellular) {
-                    print("⚠️ 当前使用蜂窝数据")
+                } else {
                     completion(.wifi, false)
+                }
+                if path.usesInterfaceType(.cellular) {
+                    print("⚠️ 当前使用蜂窝数据")
+                    completion(.cellular, true)
+                } else {
+                    completion(.cellular, false)
+                }
+                if path.usesInterfaceType(.other) {
+                    completion(.proxy, true)
+                } else {
+                    completion(.proxy, false)
                 }
                 //IPV4
                 if path.supportsIPv4 {
@@ -80,61 +104,99 @@ extension DDNetCheck {
                 } else {
                     completion(.ipv6, false)
                 }
+                
                 //是否受限
                 if path.isConstrained {
                     completion(.isConstrained, true)
                 } else {
                     completion(.isConstrained, false)
                 }
-                
-                // 额外测试是否能访问外网
-                self._checkInternetConnection(url: self.url) { isConnected in
-                    completion(.isConnected, isConnected)
-                }
-                self._checkInternetConnection(url: "https://www.apple.com") { isConnected in
-                    completion(.appleServerConnected, isConnected)
-                }
             } else {
                 print("❌ 设备未连接网络")
-                completion(.notAvailable, false)
+                for type in DDNetCheckType.allCases {
+                    completion(type, false)
+                }
             }
         }
         monitor?.start(queue: DispatchQueue.global(qos: .background))
     }
     
-    public func ping(complete: @escaping (DDNetCheckType, DDPingResponse?, Error?) -> Void) {
-        self.pingTools?.start(pingType: .any, interval: .millisecond(5000), complete: { response, error in
-            complete(.ping, response, error)
-        })
+    ///服务器状态
+    func checkServer(url: URL?, timeout: TimeInterval = 10, completion: @escaping (NetworkStatus) -> Void) {
+        guard let url = url else { return }
+        var request = URLRequest(url: url)
+        request.timeoutInterval = timeout
         
-        self.applePingTools?.start(pingType:.any, interval: .millisecond(5000), complete: { response, error in
-            complete(.appleServerPing, response, error)
+        let task = URLSession.shared.dataTask(with: request) { _, response, error in
+            if let error = error as? URLError {
+                switch error.code {
+                case .notConnectedToInternet:
+                    completion(.noConnection)
+                case .timedOut:
+                    completion(.timeout)
+                case .cannotFindHost, .dnsLookupFailed:
+                    completion(.dnsError)
+                case .secureConnectionFailed, .serverCertificateUntrusted,
+                        .serverCertificateHasBadDate, .serverCertificateHasUnknownRoot:
+                    completion(.sslError)
+                default:
+                    completion(.unknownError)
+                }
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                completion(.unknownError)
+                return
+            }
+            
+            if httpResponse.statusCode == 200 {
+                completion(.success)
+            } else {
+                completion(.serverError(httpResponse.statusCode))
+            }
+        }
+        
+        task.resume()
+    }
+    
+    ///服务器速度
+    public func ping(url: String, complete: @escaping PingComplete) {
+        let pingTool = DDPingTools(url: URL(string: url))
+        pingTool.showNetworkActivityIndicator = .none
+//        pingTool.debugLog = false
+        pingTool.start(pingType: .any, interval: .millisecond(5000), complete: { response, error in
+            complete(response, error)
         })
+        self.pingTools.append(pingTool)
     }
     
     public func stop() {
         monitor?.cancel()
-        self.pingTools?.stop()
-        self.applePingTools?.stop()
+        for pingTool in self.pingTools {
+            pingTool.stop()
+        }
+        self.pingTools.removeAll()
     }
 }
 
 private extension DDNetCheck {
-    func _checkInternetConnection(url: String, completion: @escaping (Bool) -> Void) {
-        guard let url = URL(string: url) else {
-            completion(false)
-            return
-        }
-        var request = URLRequest(url: url)
-        request.timeoutInterval = 10
-        
-        let task = URLSession.shared.dataTask(with: request) { _, response, error in
-            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
-                completion(true)
-            } else {
-                completion(false)
+    /// 判断当前是否处于 VPN 连接状态
+    func isVPNActive() -> Bool {
+            guard let cfDict = CFNetworkCopySystemProxySettings(),
+                  let nsDict = cfDict.takeRetainedValue() as? [String: Any],
+                  let scopes = nsDict["__SCOPED__"] as? [String: Any] else {
+                return false
             }
+
+            for key in scopes.keys {
+                if key.starts(with: "tap") || key.starts(with: "tun") ||
+                   key.starts(with: "ppp") || key.starts(with: "ipsec") ||
+                   key.starts(with: "utun") {
+                    return true
+                }
+            }
+
+            return false
         }
-        task.resume()
-    }
 }
