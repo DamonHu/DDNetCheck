@@ -25,6 +25,8 @@ class ViewController: UIViewController {
         let vc = DDNetCheckVC(url: "https://www.yechan.cn")
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)
+        
+        
     }
 
 }
