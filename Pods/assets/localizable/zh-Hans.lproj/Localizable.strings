@@ -28,3 +28,4 @@
 "Device is not restricted (Low Data Mode)" = "设备未受限(低数据模式)";
 "Device is not using a VPN" = "设备未使用VPN";
 "Device is not using a proxy" = "设备未使用代理";
+"Net check" = "网络检测";

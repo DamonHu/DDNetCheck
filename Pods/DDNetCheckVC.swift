@@ -36,7 +36,7 @@ public class DDNetCheckVC: UIViewController {
     private var checkTool = DDNetCheck()
     private var list = [[DDNetCheckTableViewCellModel]]()
     
-    init(url: String) {
+    public init(url: String) {
         self.url = url
         super.init(nibName: nil, bundle: nil)
     }

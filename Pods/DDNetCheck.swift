@@ -56,6 +56,7 @@ public extension NetworkStatus {
 open class DDNetCheck: NSObject {
     private var monitor: NWPathMonitor?
     private var pingTools: [DDPingTools] = []
+    private var mNetCheckVC: DDNetCheckVC?
 }
 
 extension DDNetCheck {
@@ -176,25 +177,125 @@ extension DDNetCheck {
         }
         self.pingTools.removeAll()
     }
+    
+    public func showVC(url: String) {
+        self.mNetCheckVC = DDNetCheckVC(url: url)
+        let vc = self.mNetCheckVC!
+        let navigationVC = UINavigationController(rootViewController: vc)
+        navigationVC.modalPresentationStyle = .fullScreen
+        navigationVC.navigationBar.barTintColor = UIColor.white
+        //set title
+        let view = UIView()
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.attributedText = NSAttributedString(string: "Net check".ZXLocaleString, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 18, weight: .medium), NSAttributedString.Key.foregroundColor:UIColor.black])
+        view.addSubview(label)
+        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        
+        vc.navigationItem.titleView = view
+        //navigationBar
+        let button = UIButton(frame: .init(x: 0, y: 0, width: 25, height: 25))
+        button.setImage(UIImageHDBoundle(named: "log_icon_close"), for: .normal)
+        button.addTarget(self, action: #selector(_closeBarItemClick), for: .touchUpInside)
+        NSLayoutConstraint(item: button, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 25).isActive = true
+        NSLayoutConstraint(item: button, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 25).isActive = true
+        let leftbarItem = UIBarButtonItem(customView: button)
+        vc.navigationItem.leftBarButtonItems = [leftbarItem]
+        
+        self.getCurrentVC()?.present(navigationVC, animated: true)
+    }
+    
+    public func hideVC() {
+        guard let vc = self.mNetCheckVC else { return }
+        
+        if let nav = vc.navigationController {
+            nav.dismiss(animated: true)
+        } else {
+            vc.dismiss(animated: true)
+        }
+    }
 }
 
 private extension DDNetCheck {
     /// 判断当前是否处于 VPN 连接状态
     func isVPNActive() -> Bool {
-            guard let cfDict = CFNetworkCopySystemProxySettings(),
-                  let nsDict = cfDict.takeRetainedValue() as? [String: Any],
-                  let scopes = nsDict["__SCOPED__"] as? [String: Any] else {
-                return false
-            }
-
-            for key in scopes.keys {
-                if key.starts(with: "tap") || key.starts(with: "tun") ||
-                   key.starts(with: "ppp") || key.starts(with: "ipsec") ||
-                   key.starts(with: "utun") {
-                    return true
-                }
-            }
-
+        guard let cfDict = CFNetworkCopySystemProxySettings(),
+              let nsDict = cfDict.takeRetainedValue() as? [String: Any],
+              let scopes = nsDict["__SCOPED__"] as? [String: Any] else {
             return false
         }
+        for key in scopes.keys {
+            if key.starts(with: "tap") || key.starts(with: "tun") ||
+                key.starts(with: "ppp") || key.starts(with: "ipsec") ||
+                key.starts(with: "utun") {
+                return true
+            }
+        }
+        return false
+    }
+    
+    @objc func _closeBarItemClick() {
+        self.hideVC()
+    }
+    
+    ///获取当前的normalwindow
+    func getCurrentNormalWindow() -> UIWindow? {
+        var window:UIWindow? = UIApplication.shared.keyWindow
+        if #available(iOS 13.0, *) {
+            for windowScene:UIWindowScene in ((UIApplication.shared.connectedScenes as? Set<UIWindowScene>)!) {
+                if windowScene.activationState == .foregroundActive {
+                    window = windowScene.windows.first
+                    for tmpWin in windowScene.windows {
+                        if tmpWin.windowLevel == .normal {
+                            window = tmpWin
+                            break
+                        }
+                    }
+                    break
+                }
+            }
+        }
+        if window == nil || window?.windowLevel != UIWindow.Level.normal {
+            for tmpWin in UIApplication.shared.windows {
+                if tmpWin.windowLevel == UIWindow.Level.normal {
+                    window = tmpWin
+                    break
+                }
+            }
+        }
+        return window
+    }
+    
+    ///获取当前显示的vc
+    func getCurrentVC(ignoreChildren: Bool = true) -> UIViewController? {
+        let currentWindow = self.getCurrentNormalWindow()
+        guard let window = currentWindow else { return nil }
+        var vc: UIViewController?
+        let frontView = window.subviews.first
+        if let nextResponder = frontView?.next {
+            if nextResponder is UIViewController {
+                vc = nextResponder as? UIViewController
+            } else {
+                vc = window.rootViewController
+            }
+        } else {
+            vc = window.rootViewController
+        }
+        
+        while (vc is UINavigationController) || (vc is UITabBarController) {
+            if vc is UITabBarController {
+                let tabBarController = vc as! UITabBarController
+                vc = tabBarController.selectedViewController
+            } else if vc is UINavigationController {
+                let navigationController = vc as! UINavigationController
+                vc = navigationController.visibleViewController
+            }
+        }
+
+        if !ignoreChildren, let children = vc?.children, children.count > 0 {
+            return children.last
+        }
+        return vc
+    }
 }
