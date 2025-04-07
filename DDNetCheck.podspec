@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 s.name = 'DDNetCheck'
 s.swift_version = '5.0'
-s.version = '1.0.3'
+s.version = '1.0.4'
 s.license= { :type => "MIT", :file => "LICENSE" }
 s.summary = "iOS Ping tool, based on Apple's simplePing project"
 s.homepage = 'https://github.com/DamonHu/DDNetCheck'
