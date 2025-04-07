@@ -72,7 +72,7 @@ public class DDNetCheckVC: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.showsHorizontalScrollIndicator = false
-        tableView.showsVerticalScrollIndicator = true
+        tableView.showsVerticalScrollIndicator = false
         tableView.backgroundColor = UIColor.clear
         tableView.separatorColor = UIColor(red: 204.0 / 255.0, green: 204.0 / 255.0, blue: 204.0 / 255.0, alpha: 1)
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
@@ -90,7 +90,7 @@ private extension DDNetCheckVC {
         self.view.addSubview(self.mTableView)
         mTableView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16).isActive = true
         mTableView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -16).isActive = true
-        mTableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 16).isActive = true
+        mTableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
         mTableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -16).isActive = true
     }
     
