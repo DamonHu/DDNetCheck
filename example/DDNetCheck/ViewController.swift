@@ -22,11 +22,11 @@ class ViewController: UIViewController {
     }
 
     func start() {
-        let vc = DDNetCheckVC(url: "https://www.yechan.cn")
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true)
-        
-        
+//        let vc = DDNetCheckVC(url: "https://www.yechan.cn")
+//        vc.modalPresentationStyle = .fullScreen
+//        self.present(vc, animated: true)
+        let tool = DDNetCheck()
+        tool.showVC(url: "https://www.yechan.cn")
     }
 
 }

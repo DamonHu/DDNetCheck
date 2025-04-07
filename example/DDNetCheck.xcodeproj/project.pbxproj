@@ -37,6 +37,9 @@
 		E4F966582DA38443002B0378 /* DDNetCheckTableViewWebCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9663B2DA38443002B0378 /* DDNetCheckTableViewWebCellModel.swift */; };
 		E4F966592DA38443002B0378 /* DDNetCheckStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9663D2DA38443002B0378 /* DDNetCheckStatusView.swift */; };
 		E4F9665A2DA38443002B0378 /* DDNetCheckTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F966382DA38443002B0378 /* DDNetCheckTableViewCellModel.swift */; };
+		E4F966642DA3D295002B0378 /* log_icon_scale.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F966622DA3D295002B0378 /* log_icon_scale.png */; };
+		E4F966652DA3D295002B0378 /* log_icon_close.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F966612DA3D295002B0378 /* log_icon_close.png */; };
+		E4F966662DA3D295002B0378 /* log_icon_subtract.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F966632DA3D295002B0378 /* log_icon_subtract.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +78,9 @@
 		E4F9663E2DA38443002B0378 /* DDNetCheckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDNetCheckTableViewCell.swift; sourceTree = "<group>"; };
 		E4F966402DA38443002B0378 /* DDNetCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDNetCheck.swift; sourceTree = "<group>"; };
 		E4F966412DA38443002B0378 /* DDNetCheckVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDNetCheckVC.swift; sourceTree = "<group>"; };
+		E4F966612DA3D295002B0378 /* log_icon_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = log_icon_close.png; sourceTree = "<group>"; };
+		E4F966622DA3D295002B0378 /* log_icon_scale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = log_icon_scale.png; sourceTree = "<group>"; };
+		E4F966632DA3D295002B0378 /* log_icon_subtract.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = log_icon_subtract.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,9 @@
 		E4F966322DA38443002B0378 /* icon */ = {
 			isa = PBXGroup;
 			children = (
+				E4F966612DA3D295002B0378 /* log_icon_close.png */,
+				E4F966622DA3D295002B0378 /* log_icon_scale.png */,
+				E4F966632DA3D295002B0378 /* log_icon_subtract.png */,
 				E4F966232DA38443002B0378 /* appleServerConnected.png */,
 				E4F966242DA38443002B0378 /* appleServerPing.png */,
 				E4F966252DA38443002B0378 /* cellular.png */,
@@ -279,6 +288,9 @@
 				E4F966442DA38443002B0378 /* wifi.png in Resources */,
 				E4F966452DA38443002B0378 /* notAvailable.png in Resources */,
 				E4F966462DA38443002B0378 /* ping.png in Resources */,
+				E4F966642DA3D295002B0378 /* log_icon_scale.png in Resources */,
+				E4F966652DA3D295002B0378 /* log_icon_close.png in Resources */,
+				E4F966662DA3D295002B0378 /* log_icon_subtract.png in Resources */,
 				E4F966472DA38443002B0378 /* cellular.png in Resources */,
 				E4F966482DA38443002B0378 /* vpn.png in Resources */,
 				E4F966492DA38443002B0378 /* icon-failed.png in Resources */,

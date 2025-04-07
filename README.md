@@ -2,6 +2,8 @@
 
 A network status diagnostic tool for iOS, compatible with [DDKitSwift](https://github.com/DamonHu/DDKitSwift).
 
+![](./preview/demo.png)
+
 ## Features
 
 When making network requests, failures may occur due to device issues or website/server outages. This tool helps diagnose problems from multiple perspectives, including device network status, website accessibility and latency, Apple site connectivity, etc., to determine whether the issue lies with the user's device or the server.
