@@ -24,14 +24,14 @@ extension String{
 }
 
 //参考网站测速
-enum TestWeb: CaseIterable {
+public enum TestWeb: CaseIterable {
     case apple
     case amazon
     case baidu
     case aliyun
 }
 
-class DDNetCheckVC: UIViewController {
+public class DDNetCheckVC: UIViewController {
     private var url: String
     private var checkTool = DDNetCheck()
     private var list = [[DDNetCheckTableViewCellModel]]()
@@ -45,18 +45,18 @@ class DDNetCheckVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         self._createUI()
         self._loadData()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self._startCheck()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.checkTool.stop()
     }
@@ -197,15 +197,15 @@ private extension DDNetCheckVC {
 }
 
 extension DDNetCheckVC: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list[section].count
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    public func numberOfSections(in tableView: UITableView) -> Int {
         return list.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = list[indexPath.section][indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "DDNetCheckTableViewCell") as! DDNetCheckTableViewCell
         cell.selectionStyle = .none
@@ -214,7 +214,7 @@ extension DDNetCheckVC: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
             return "App Server Connection Test".ZXLocaleString
         } else if section == 1 {
@@ -224,15 +224,15 @@ extension DDNetCheckVC: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
     
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
     }
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.1
     }
 }

@@ -8,6 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		9C2CFC0F4C6AAADD83513544 /* Pods_DDNetCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3486E1F5B78C6EFEB8DD212E /* Pods_DDNetCheck.framework */; };
+		E4F9660D2DA383E1002B0378 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F965FC2DA383E1002B0378 /* AppDelegate.swift */; };
+		E4F9660E2DA383E1002B0378 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F966032DA383E1002B0378 /* ViewController.swift */; };
+		E4F9661F2DA383E1002B0378 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4F965FD2DA383E1002B0378 /* Assets.xcassets */; };
+		E4F966212DA383E1002B0378 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4F966002DA383E1002B0378 /* LaunchScreen.storyboard */; };
+		E4F966222DA383E1002B0378 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4F966022DA383E1002B0378 /* Main.storyboard */; };
+		E4F966432DA38443002B0378 /* proxy.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F9662F2DA38443002B0378 /* proxy.png */; };
+		E4F966442DA38443002B0378 /* wifi.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F966312DA38443002B0378 /* wifi.png */; };
+		E4F966452DA38443002B0378 /* notAvailable.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F9662D2DA38443002B0378 /* notAvailable.png */; };
+		E4F966462DA38443002B0378 /* ping.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F9662E2DA38443002B0378 /* ping.png */; };
+		E4F966472DA38443002B0378 /* cellular.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F966252DA38443002B0378 /* cellular.png */; };
+		E4F966482DA38443002B0378 /* vpn.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F966302DA38443002B0378 /* vpn.png */; };
+		E4F966492DA38443002B0378 /* icon-failed.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F966272DA38443002B0378 /* icon-failed.png */; };
+		E4F9664A2DA38443002B0378 /* icon-success.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F966282DA38443002B0378 /* icon-success.png */; };
+		E4F9664B2DA38443002B0378 /* isConstrained.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F9662C2DA38443002B0378 /* isConstrained.png */; };
+		E4F9664C2DA38443002B0378 /* appleServerPing.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F966242DA38443002B0378 /* appleServerPing.png */; };
+		E4F9664D2DA38443002B0378 /* ipv4.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F966292DA38443002B0378 /* ipv4.png */; };
+		E4F9664E2DA38443002B0378 /* ipv6.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F9662A2DA38443002B0378 /* ipv6.png */; };
+		E4F9664F2DA38443002B0378 /* dns.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F966262DA38443002B0378 /* dns.png */; };
+		E4F966502DA38443002B0378 /* isConnected.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F9662B2DA38443002B0378 /* isConnected.png */; };
+		E4F966512DA38443002B0378 /* appleServerConnected.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F966232DA38443002B0378 /* appleServerConnected.png */; };
+		E4F966522DA38443002B0378 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4F966352DA38443002B0378 /* Localizable.strings */; };
+		E4F966532DA38443002B0378 /* DDNetCheckTableViewPlatformCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F966392DA38443002B0378 /* DDNetCheckTableViewPlatformCellModel.swift */; };
+		E4F966542DA38443002B0378 /* DDNetCheckVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F966412DA38443002B0378 /* DDNetCheckVC.swift */; };
+		E4F966552DA38443002B0378 /* DDNetCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F966402DA38443002B0378 /* DDNetCheck.swift */; };
+		E4F966562DA38443002B0378 /* DDNetCheckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9663E2DA38443002B0378 /* DDNetCheckTableViewCell.swift */; };
+		E4F966572DA38443002B0378 /* DDNetCheckTableViewTestCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9663A2DA38443002B0378 /* DDNetCheckTableViewTestCellModel.swift */; };
+		E4F966582DA38443002B0378 /* DDNetCheckTableViewWebCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9663B2DA38443002B0378 /* DDNetCheckTableViewWebCellModel.swift */; };
+		E4F966592DA38443002B0378 /* DDNetCheckStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9663D2DA38443002B0378 /* DDNetCheckStatusView.swift */; };
+		E4F9665A2DA38443002B0378 /* DDNetCheckTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F966382DA38443002B0378 /* DDNetCheckTableViewCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -15,28 +44,38 @@
 		710EE6D34FE631ADA045D1E1 /* Pods-DDNetCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDNetCheck.debug.xcconfig"; path = "Target Support Files/Pods-DDNetCheck/Pods-DDNetCheck.debug.xcconfig"; sourceTree = "<group>"; };
 		C579310AEAB542E541B3122F /* Pods-DDNetCheck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDNetCheck.release.xcconfig"; path = "Target Support Files/Pods-DDNetCheck/Pods-DDNetCheck.release.xcconfig"; sourceTree = "<group>"; };
 		E4F963EE2D9E3276002B0378 /* DDNetCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDNetCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4F965FC2DA383E1002B0378 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E4F965FD2DA383E1002B0378 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E4F965FE2DA383E1002B0378 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4F965FF2DA383E1002B0378 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E4F966012DA383E1002B0378 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E4F966032DA383E1002B0378 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E4F966232DA38443002B0378 /* appleServerConnected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appleServerConnected.png; sourceTree = "<group>"; };
+		E4F966242DA38443002B0378 /* appleServerPing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appleServerPing.png; sourceTree = "<group>"; };
+		E4F966252DA38443002B0378 /* cellular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cellular.png; sourceTree = "<group>"; };
+		E4F966262DA38443002B0378 /* dns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dns.png; sourceTree = "<group>"; };
+		E4F966272DA38443002B0378 /* icon-failed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-failed.png"; sourceTree = "<group>"; };
+		E4F966282DA38443002B0378 /* icon-success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-success.png"; sourceTree = "<group>"; };
+		E4F966292DA38443002B0378 /* ipv4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ipv4.png; sourceTree = "<group>"; };
+		E4F9662A2DA38443002B0378 /* ipv6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ipv6.png; sourceTree = "<group>"; };
+		E4F9662B2DA38443002B0378 /* isConnected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = isConnected.png; sourceTree = "<group>"; };
+		E4F9662C2DA38443002B0378 /* isConstrained.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = isConstrained.png; sourceTree = "<group>"; };
+		E4F9662D2DA38443002B0378 /* notAvailable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notAvailable.png; sourceTree = "<group>"; };
+		E4F9662E2DA38443002B0378 /* ping.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ping.png; sourceTree = "<group>"; };
+		E4F9662F2DA38443002B0378 /* proxy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = proxy.png; sourceTree = "<group>"; };
+		E4F966302DA38443002B0378 /* vpn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vpn.png; sourceTree = "<group>"; };
+		E4F966312DA38443002B0378 /* wifi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wifi.png; sourceTree = "<group>"; };
+		E4F966332DA38443002B0378 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E4F966342DA38443002B0378 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E4F966382DA38443002B0378 /* DDNetCheckTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDNetCheckTableViewCellModel.swift; sourceTree = "<group>"; };
+		E4F966392DA38443002B0378 /* DDNetCheckTableViewPlatformCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDNetCheckTableViewPlatformCellModel.swift; sourceTree = "<group>"; };
+		E4F9663A2DA38443002B0378 /* DDNetCheckTableViewTestCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDNetCheckTableViewTestCellModel.swift; sourceTree = "<group>"; };
+		E4F9663B2DA38443002B0378 /* DDNetCheckTableViewWebCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDNetCheckTableViewWebCellModel.swift; sourceTree = "<group>"; };
+		E4F9663D2DA38443002B0378 /* DDNetCheckStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDNetCheckStatusView.swift; sourceTree = "<group>"; };
+		E4F9663E2DA38443002B0378 /* DDNetCheckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDNetCheckTableViewCell.swift; sourceTree = "<group>"; };
+		E4F966402DA38443002B0378 /* DDNetCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDNetCheck.swift; sourceTree = "<group>"; };
+		E4F966412DA38443002B0378 /* DDNetCheckVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDNetCheckVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		E4F964002D9E327B002B0378 /* Exceptions for "DDNetCheck" folder in "DDNetCheck" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = E4F963ED2D9E3276002B0378 /* DDNetCheck */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		E4F963F02D9E3276002B0378 /* DDNetCheck */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				E4F964002D9E327B002B0378 /* Exceptions for "DDNetCheck" folder in "DDNetCheck" target */,
-			);
-			path = DDNetCheck;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E4F963EB2D9E3276002B0378 /* Frameworks */ = {
@@ -70,7 +109,7 @@
 		E4F963E52D9E3276002B0378 = {
 			isa = PBXGroup;
 			children = (
-				E4F963F02D9E3276002B0378 /* DDNetCheck */,
+				E4F966042DA383E1002B0378 /* DDNetCheck */,
 				E4F963EF2D9E3276002B0378 /* Products */,
 				84189644B8331531E3E9F5FD /* Pods */,
 				CAEB757B580818BF55CBEB07 /* Frameworks */,
@@ -84,6 +123,92 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		E4F966042DA383E1002B0378 /* DDNetCheck */ = {
+			isa = PBXGroup;
+			children = (
+				E4F966422DA38443002B0378 /* Pods */,
+				E4F965FC2DA383E1002B0378 /* AppDelegate.swift */,
+				E4F965FD2DA383E1002B0378 /* Assets.xcassets */,
+				E4F965FE2DA383E1002B0378 /* Info.plist */,
+				E4F966002DA383E1002B0378 /* LaunchScreen.storyboard */,
+				E4F966022DA383E1002B0378 /* Main.storyboard */,
+				E4F966032DA383E1002B0378 /* ViewController.swift */,
+			);
+			path = DDNetCheck;
+			sourceTree = "<group>";
+		};
+		E4F966322DA38443002B0378 /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				E4F966232DA38443002B0378 /* appleServerConnected.png */,
+				E4F966242DA38443002B0378 /* appleServerPing.png */,
+				E4F966252DA38443002B0378 /* cellular.png */,
+				E4F966262DA38443002B0378 /* dns.png */,
+				E4F966272DA38443002B0378 /* icon-failed.png */,
+				E4F966282DA38443002B0378 /* icon-success.png */,
+				E4F966292DA38443002B0378 /* ipv4.png */,
+				E4F9662A2DA38443002B0378 /* ipv6.png */,
+				E4F9662B2DA38443002B0378 /* isConnected.png */,
+				E4F9662C2DA38443002B0378 /* isConstrained.png */,
+				E4F9662D2DA38443002B0378 /* notAvailable.png */,
+				E4F9662E2DA38443002B0378 /* ping.png */,
+				E4F9662F2DA38443002B0378 /* proxy.png */,
+				E4F966302DA38443002B0378 /* vpn.png */,
+				E4F966312DA38443002B0378 /* wifi.png */,
+			);
+			path = icon;
+			sourceTree = "<group>";
+		};
+		E4F966362DA38443002B0378 /* localizable */ = {
+			isa = PBXGroup;
+			children = (
+				E4F966352DA38443002B0378 /* Localizable.strings */,
+			);
+			path = localizable;
+			sourceTree = "<group>";
+		};
+		E4F966372DA38443002B0378 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				E4F966322DA38443002B0378 /* icon */,
+				E4F966362DA38443002B0378 /* localizable */,
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
+		E4F9663C2DA38443002B0378 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				E4F966382DA38443002B0378 /* DDNetCheckTableViewCellModel.swift */,
+				E4F966392DA38443002B0378 /* DDNetCheckTableViewPlatformCellModel.swift */,
+				E4F9663A2DA38443002B0378 /* DDNetCheckTableViewTestCellModel.swift */,
+				E4F9663B2DA38443002B0378 /* DDNetCheckTableViewWebCellModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		E4F9663F2DA38443002B0378 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				E4F9663D2DA38443002B0378 /* DDNetCheckStatusView.swift */,
+				E4F9663E2DA38443002B0378 /* DDNetCheckTableViewCell.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		E4F966422DA38443002B0378 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E4F966372DA38443002B0378 /* assets */,
+				E4F9663C2DA38443002B0378 /* model */,
+				E4F9663F2DA38443002B0378 /* view */,
+				E4F966402DA38443002B0378 /* DDNetCheck.swift */,
+				E4F966412DA38443002B0378 /* DDNetCheckVC.swift */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -101,9 +226,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				E4F963F02D9E3276002B0378 /* DDNetCheck */,
 			);
 			name = DDNetCheck;
 			productName = DDNetCheck;
@@ -150,6 +272,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4F9661F2DA383E1002B0378 /* Assets.xcassets in Resources */,
+				E4F966212DA383E1002B0378 /* LaunchScreen.storyboard in Resources */,
+				E4F966222DA383E1002B0378 /* Main.storyboard in Resources */,
+				E4F966432DA38443002B0378 /* proxy.png in Resources */,
+				E4F966442DA38443002B0378 /* wifi.png in Resources */,
+				E4F966452DA38443002B0378 /* notAvailable.png in Resources */,
+				E4F966462DA38443002B0378 /* ping.png in Resources */,
+				E4F966472DA38443002B0378 /* cellular.png in Resources */,
+				E4F966482DA38443002B0378 /* vpn.png in Resources */,
+				E4F966492DA38443002B0378 /* icon-failed.png in Resources */,
+				E4F9664A2DA38443002B0378 /* icon-success.png in Resources */,
+				E4F9664B2DA38443002B0378 /* isConstrained.png in Resources */,
+				E4F9664C2DA38443002B0378 /* appleServerPing.png in Resources */,
+				E4F9664D2DA38443002B0378 /* ipv4.png in Resources */,
+				E4F9664E2DA38443002B0378 /* ipv6.png in Resources */,
+				E4F9664F2DA38443002B0378 /* dns.png in Resources */,
+				E4F966502DA38443002B0378 /* isConnected.png in Resources */,
+				E4F966512DA38443002B0378 /* appleServerConnected.png in Resources */,
+				E4F966522DA38443002B0378 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,10 +343,48 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4F9660D2DA383E1002B0378 /* AppDelegate.swift in Sources */,
+				E4F966532DA38443002B0378 /* DDNetCheckTableViewPlatformCellModel.swift in Sources */,
+				E4F966542DA38443002B0378 /* DDNetCheckVC.swift in Sources */,
+				E4F966552DA38443002B0378 /* DDNetCheck.swift in Sources */,
+				E4F966562DA38443002B0378 /* DDNetCheckTableViewCell.swift in Sources */,
+				E4F966572DA38443002B0378 /* DDNetCheckTableViewTestCellModel.swift in Sources */,
+				E4F966582DA38443002B0378 /* DDNetCheckTableViewWebCellModel.swift in Sources */,
+				E4F966592DA38443002B0378 /* DDNetCheckStatusView.swift in Sources */,
+				E4F9665A2DA38443002B0378 /* DDNetCheckTableViewCellModel.swift in Sources */,
+				E4F9660E2DA383E1002B0378 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E4F966002DA383E1002B0378 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4F965FF2DA383E1002B0378 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E4F966022DA383E1002B0378 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4F966012DA383E1002B0378 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E4F966352DA38443002B0378 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4F966332DA38443002B0378 /* en */,
+				E4F966342DA38443002B0378 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E4F964022D9E327B002B0378 /* Debug */ = {
