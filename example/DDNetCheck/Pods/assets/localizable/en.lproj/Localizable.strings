@@ -8,15 +8,10 @@
 "Device is connected via Wi-Fi" = "Device is connected via Wi-Fi";
 "Device is connected via cellular data" = "Device is connected via cellular data";
 "Device DNS service is functioning properly" = "Device DNS service is functioning properly";
-"Device supports IPv4 access" = "Device supports IPv4 access";
-"Device supports IPv6 access" = "Device supports IPv6 access";
-"Device is in a restricted mode such as Low Data Mode" = "Device is in a restricted mode such as Low Data Mode";
 "Device connection to the server is normal" = "Device connection to the server is normal";
 "Device connection to Apple servers is normal" = "Device connection to Apple servers is normal";
 "Device server access speed" = "Device server access speed";
 "Device Apple server access speed" = "Device Apple server access speed";
-"Device is using a VPN" = "Device is using a VPN";
-"Device is using a proxy" = "Device is using a proxy";
 "Server Connection Status" = "Server Connection Status";
 "Response Time" = "Response Time";
 "Failed" = "Failed";
@@ -30,4 +25,8 @@
 "SSL Certificate Error" = "SSL Certificate Error";
 "Abnormal Server Response" = "Abnormal Server Response";
 "Unknown Server Error" = "Unknown Server Error";
-
+"Device is accessing via IPv4" = "Device is accessing via IPv4";
+"Device is accessing via IPv6" = "Device is accessing via IPv6";
+"Device is not restricted (Low Data Mode)" = "Device is not restricted (Low Data Mode)";
+"Device is not using a VPN" = "Device is not using a VPN";
+"Device is not using a proxy" = "Device is not using a proxy";

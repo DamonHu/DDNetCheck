@@ -11,14 +11,14 @@ import DDPingTools
 
 //设备检测
 public enum DDNetCheckType: CaseIterable {
+    case isNotConstrained  //是否在低数据模式或者省电或节省流量的受限模式
+    case dns            //DNS状态
     case wifi           //是否是wifi类型
     case cellular       //是否是蜂窝网络
-    case proxy          //使用代理
-    case vpn            //使用了vpn
-    case dns            //DNS状态
+    case notProxy          //代理
+    case notVPN            //vpn
     case ipv4           //是否支持ipv4
     case ipv6           //是否支持ipv6
-    case isConstrained  //是否在低数据模式或者省电或节省流量的受限模式
 }
 
 //网站监测
@@ -61,7 +61,7 @@ open class DDNetCheck: NSObject {
 extension DDNetCheck {
     public func checkPlatform(completion:  @escaping (DDNetCheckType, Bool) -> Void) {
         //VPN监测
-        completion(.vpn, self.isVPNActive())
+        completion(.notVPN, !self.isVPNActive())
         //设备信息
         monitor?.cancel()
         monitor = NWPathMonitor()
@@ -84,9 +84,9 @@ extension DDNetCheck {
                     completion(.cellular, false)
                 }
                 if path.usesInterfaceType(.other) {
-                    completion(.proxy, true)
+                    completion(.notProxy, false)
                 } else {
-                    completion(.proxy, false)
+                    completion(.notProxy, true)
                 }
                 //IPV4
                 if path.supportsIPv4 {
@@ -103,12 +103,12 @@ extension DDNetCheck {
                 //是否受限
                 if #available(iOS 13.0, *) {
                     if path.isConstrained {
-                        completion(.isConstrained, true)
+                        completion(.isNotConstrained, false)
                     } else {
-                        completion(.isConstrained, false)
+                        completion(.isNotConstrained, true)
                     }
                 } else {
-                    completion(.isConstrained, false)
+                    completion(.isNotConstrained, true)
                 }
             } else {
                 for type in DDNetCheckType.allCases {

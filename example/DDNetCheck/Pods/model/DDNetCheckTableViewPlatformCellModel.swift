@@ -22,11 +22,11 @@ class DDNetCheckTableViewPlatformCellModel: DDNetCheckTableViewCellModel {
             return UIImageHDBoundle(named: "ipv4")
         case .ipv6:
             return UIImageHDBoundle(named: "ipv6")
-        case .isConstrained:
+        case .isNotConstrained:
             return UIImageHDBoundle(named: "isConstrained")
-        case .proxy:
+        case .notProxy:
             return UIImageHDBoundle(named: "proxy")
-        case .vpn:
+        case .notVPN:
             return UIImageHDBoundle(named: "vpn")
         }
     }
@@ -40,15 +40,15 @@ class DDNetCheckTableViewPlatformCellModel: DDNetCheckTableViewCellModel {
         case .dns:
             return "Device DNS service is functioning properly".ZXLocaleString
         case .ipv4:
-            return "Device supports IPv4 access".ZXLocaleString
+            return "Device is accessing via IPv4".ZXLocaleString
         case .ipv6:
-            return "Device supports IPv6 access".ZXLocaleString
-        case .isConstrained:
-            return "Device is in a restricted mode such as Low Data Mode".ZXLocaleString
-        case .proxy:
-            return "Device is using a proxy".ZXLocaleString
-        case .vpn:
-            return "Device is using a VPN".ZXLocaleString
+            return "Device is accessing via IPv6".ZXLocaleString
+        case .isNotConstrained:
+            return "Device is not restricted (Low Data Mode)".ZXLocaleString
+        case .notProxy:
+            return "Device is not using a proxy".ZXLocaleString
+        case .notVPN:
+            return "Device is not using a VPN".ZXLocaleString
         }
     }
 }
