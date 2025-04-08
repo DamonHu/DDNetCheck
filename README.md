@@ -2,7 +2,9 @@
 
 A network status diagnostic tool for iOS, compatible with [DDKitSwift](https://github.com/DamonHu/DDKitSwift).
 
-![](./preview/demo.png)
+## Project Preview
+
+<img src="./preview/demo.png" width=200 />
 
 ## Features
 
