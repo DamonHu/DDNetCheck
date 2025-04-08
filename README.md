@@ -4,7 +4,7 @@ A network status diagnostic tool for iOS, compatible with [DDKitSwift](https://g
 
 ## Project Preview
 
-<img src="./preview/demo.png" width=200 />
+<img src="./preview/demo.png" width=360 />
 
 ## Features
 
