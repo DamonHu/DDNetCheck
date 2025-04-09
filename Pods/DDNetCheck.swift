@@ -57,6 +57,8 @@ open class DDNetCheck: NSObject {
     private var monitor: NWPathMonitor?
     private var pingTools: [DDPingTools] = []
     private var mNetCheckVC: DDNetCheckVC?
+    
+    public static let shared = DDNetCheck()
 }
 
 extension DDNetCheck {

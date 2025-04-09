@@ -39,14 +39,13 @@ pod 'DDNetCheck'
 ### Start Test
 
 ```swift
-let tool = DDNetCheck()
-tool.showVC(url: "https://www.yechan.cn")
+DDNetCheck.shared.showVC(url: "https://api.yechan.cn")
 ```
 
 ### Close Test View
 
 ```swift
-tool.hideVC()
+DDNetCheck.shared.hideVC()
 ```
 
 ## Advanced Usage
